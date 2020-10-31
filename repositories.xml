@@ -1,16 +1,11 @@
-<?xml version="1.0" ?>
 <repositories version="1.0">
-  <repo quality="experimental" status="unofficial">
-    <name>my-overlay</name>
-      <description lang="en">deso's Custom Gentoo Overlay.</description>
-        <homepage>https://github.com/my-name/my-overlay</homepage>
-        <owner type="person">
-            <name>deso</name>
-            <email>my-name@my-email.com</email>
-        </owner>
-        
-git://github.com/desolatorxxl/desos-overlay.git
-
-        <feed>https://github.com/desolatorxxl/desos-overlay/commits/master.atom</feed>
-  </repo>
+	<repo priority="50" quality="experimental" status="unofficial">
+		<name>desos-overlay</name>
+		<description>nginx server for the barn computer from Larry the cow.</description>
+		<homepage>https://github.com/gentoo/nginx-overlay</homepage>
+		<owner>
+			<email>larry@gentoo.org</email>
+		</owner>
+		<source type="git">https://github.com/desolatorxxl/desos-overlay.git</source>
+	</repo>
 </repositories>
