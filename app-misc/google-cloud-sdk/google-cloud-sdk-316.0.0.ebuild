@@ -1,7 +1,7 @@
 # Copyright 2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=7
 
 DESCRIPTION="Googe Cloud SDK"
 HOMEPAGE="www.google.com"
@@ -35,6 +35,6 @@ src_install() {
 	elog "Creating gcloud symlink"
 	dosym ${D}/opt/google-cloud-sdk/bin/gcloud /usr/bin/gcloud
 	elog "Installing man pages"
-	doman ${D}/opt/google-cloud-sdk/help/man/man1/*.1
+	doman help/man/man1/*
 	elog "Done"
 }
