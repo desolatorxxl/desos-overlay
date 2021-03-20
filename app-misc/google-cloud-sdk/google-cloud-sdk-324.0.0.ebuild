@@ -5,7 +5,7 @@ EAPI=7
 
 DESCRIPTION="Googe Cloud SDK"
 HOMEPAGE="www.google.com"
-SRC_URI="https://dl.google.com/dl/cloudsdk/release/downloads/for_packagers/linux/google-cloud-sdk_324.0.0.orig.tar.gz"
+SRC_URI="https://dl.google.com/dl/cloudsdk/release/downloads/for_packagers/linux/google-cloud-sdk_324.0.0.orig.tar.gz -> ${P}.tar.gz"
 
 LICENSE="See https://cloud.google.com/terms/"
 SLOT="0"
@@ -15,6 +15,7 @@ IUSE=""
 DEPEND="${PYTHON_DEPS}"
 RDEPEND=""
 BDEPEND=""
+
 
 S="${WORKDIR}/google-cloud-sdk"
 
@@ -27,14 +28,18 @@ src_install() {
 		--bash-completion False \
 		--additional-components "" \
 		1 > /dev/null || die
-	mkdir -p ${D}/opt/google-cloud-sdk
+	mkdir -p ${D}/opt
 	elog "Copying files"
-	cp -r ${S} ${D}/opt/google-cloud-sdk || die
+	cp -r ${S} ${D}/opt || die
 	elog "Creating gcloud symlink"
 	dosym ${D}/opt/google-cloud-sdk/bin/gcloud /usr/bin/gcloud
 	elog "Installing man pages"
-	doman help/man/man1/*
+	#doman help/man/man1/*
 	insinto /usr/share/zsh/site-functions
 	newins completion.zsh.inc _gcloud
 	elog "Done"
+
+	env
+	mkdir $D/opt
+	touch $D/opt/huhu.txt
 }
