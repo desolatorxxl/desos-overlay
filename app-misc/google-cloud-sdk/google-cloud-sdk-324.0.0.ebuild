@@ -1,6 +1,3 @@
-# Copyright 2020 Gentoo Authors
-# Distributed under the terms of the GNU General Public License v2
-
 EAPI=7
 
 DESCRIPTION="Googe Cloud SDK"
@@ -15,7 +12,6 @@ IUSE=""
 DEPEND="${PYTHON_DEPS}"
 RDEPEND=""
 BDEPEND=""
-
 
 S="${WORKDIR}/google-cloud-sdk"
 
@@ -34,12 +30,8 @@ src_install() {
 	elog "Creating gcloud symlink"
 	dosym ${D}/opt/google-cloud-sdk/bin/gcloud /usr/bin/gcloud
 	elog "Installing man pages"
-	#doman help/man/man1/*
+	doman help/man/man1/*
 	insinto /usr/share/zsh/site-functions
 	newins completion.zsh.inc _gcloud
 	elog "Done"
-
-	env
-	mkdir $D/opt
-	touch $D/opt/huhu.txt
 }
