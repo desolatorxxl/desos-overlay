@@ -12,10 +12,9 @@ SLOT="0"
 KEYWORDS="amd64 x86"
 IUSE=""
 
-DEPEND=""
-RDEPEND="${DEPEND}"
+DEPEND="${PYTHON_DEPS}"
+RDEPEND=""
 BDEPEND=""
-# @TODO: Depend on python with sqlite use flag
 
 S="${WORKDIR}/google-cloud-sdk"
 
