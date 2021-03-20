@@ -34,5 +34,7 @@ src_install() {
 	dosym ${D}/opt/google-cloud-sdk/bin/gcloud /usr/bin/gcloud
 	elog "Installing man pages"
 	doman help/man/man1/*
+	insinto /usr/share/zsh/site-functions
+	newins completion.zsh.inc _gcloud
 	elog "Done"
 }
