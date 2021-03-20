@@ -9,7 +9,7 @@ SRC_URI="https://dl.google.com/dl/cloudsdk/release/downloads/for_packagers/linux
 
 LICENSE="See https://cloud.google.com/terms/"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="amd64 x86"
 IUSE=""
 
 DEPEND=""
