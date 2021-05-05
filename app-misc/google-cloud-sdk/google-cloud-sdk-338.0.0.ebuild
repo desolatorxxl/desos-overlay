@@ -2,7 +2,7 @@ EAPI=7
 
 DESCRIPTION="Googe Cloud SDK"
 HOMEPAGE="www.google.com"
-SRC_URI="https://dl.google.com/dl/cloudsdk/release/downloads/for_packagers/linux/google-cloud-sdk_${PV}.orig.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://dl.google.com/dl/cloudsdk/release/downloads/for_packagers/linux/google-cloud-sdk_${PV}.orig.tar.gz"
 
 LICENSE="See https://cloud.google.com/terms/"
 SLOT="0"
