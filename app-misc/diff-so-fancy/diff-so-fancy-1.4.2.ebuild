@@ -3,8 +3,7 @@
 
 EAPI=7
 
-HASH_COMMIT="v1.4.0"
-SRC_URI="https://github.com/so-fancy/diff-so-fancy/archive/${HASH_COMMIT}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/so-fancy/diff-so-fancy/archive/v${PV}.tar.gz"
 
 DESCRIPTION="Good-lookin' diffs. Actually... nah... The best-lookin' diffs."
 HOMEPAGE="https://github.com/so-fancy/diff-so-fancy"
