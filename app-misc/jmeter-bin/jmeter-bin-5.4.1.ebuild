@@ -6,8 +6,7 @@ SRC_URI="https://dlcdn.apache.org//jmeter/binaries/apache-jmeter-$PV.tgz"
 LICENSE="Apache-2.0"
 SLOT="0"
 
-IUSE="doc"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="amd64 x86"
 
 RDEPEND=">=virtual/jre-11"
 
