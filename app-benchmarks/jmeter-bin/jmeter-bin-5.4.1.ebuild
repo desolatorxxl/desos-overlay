@@ -8,7 +8,7 @@ SLOT="0"
 
 KEYWORDS="amd64 x86"
 
-RDEPEND=">=virtual/jre-11"
+RDEPEND=">=dev-java/openjdk-jre-bin-11"
 
 S="${WORKDIR}/apache-jmeter-${PV}"
 
