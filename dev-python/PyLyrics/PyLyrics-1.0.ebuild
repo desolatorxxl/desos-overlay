@@ -5,7 +5,7 @@ inherit distutils-r1
 DESCRIPTION="Sends files to the Trash (or Recycle Bin)"
 HOMEPAGE="https://github.com/desolatorxxl/${PN}"
 SRC_URI="https://github.com/desolatorxxl/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
-DEPENDS="dev-python/beautifulsoup4"
+DEPEND="dev-python/beautifulsoup4"
 
 SLOT="0"
 LICENSE="BSD"
