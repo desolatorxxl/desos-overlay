@@ -1483,8 +1483,7 @@ RESTRICT+=" test"
 
 src_compile() {
 	    emake \
-        GOFLAGS="${GOFLAGS}" \
-        build
+        GOFLAGS="${GOFLAGS}"
 }
 
 src_install() {
