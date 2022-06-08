@@ -24,7 +24,7 @@ DESCRIPTION="Prebuilt Java JDK binaries provided by AdoptOpenJDK"
 HOMEPAGE="https://adoptopenjdk.net"
 LICENSE="GPL-2-with-classpath-exception"
 KEYWORDS="~amd64 ~arm ~ppc64"
-IUSE="alsa cups doc examples headless-awt nsplugin selinux source +webstart +gentoo-vm"
+IUSE="alsa cups doc examples headless-awt nsplugin selinux source webstart +gentoo-vm"
 
 RDEPEND="
 	media-libs/fontconfig:1.0
@@ -87,8 +87,15 @@ src_install() {
 pkg_postinst() {
 	java-vm-2_pkg_postinst
 
-	ewarn "This JDK will not be recognised by the system. For example, simply"
-	ewarn "calling \"java\" will launch a different JVM. This is necessary"
-	ewarn "until Gentoo fully supports Java 13. This JDK must therefore be"
-	ewarn "invoked using its absolute location under ${EPREFIX}/opt/${P}."
+	if use gentoo-vm ; then
+		ewarn "WARNING! You have enabled the gentoo-vm USE flag, making this JDK"
+		ewarn "recognised by the system. This will almost certainly break"
+		ewarn "many java ebuilds as they are not ready for openjdk-${SLOT}"
+	else
+		ewarn "The experimental gentoo-vm USE flag has not been enabled so this JDK"
+		ewarn "will not be recognised by the system. For example, simply calling"
+		ewarn "\"java\" will launch a different JVM. This is necessary until Gentoo"
+		ewarn "fully supports Java ${SLOT}. This JDK must therefore be invoked using its"
+		ewarn "absolute location under ${EPREFIX}/usr/$(get_libdir)/${PN}-${SLOT}."
+	fi
 }
