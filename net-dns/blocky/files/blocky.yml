@@ -1,0 +1,14 @@
+port: 53
+logLevel: info
+logPrivacy: true
+upstream:
+  default:
+    # Freifunk München
+    - 5.1.66.255
+    # Censurfridns Denmark (aka. UncensoredDNS)
+    - 91.239.100.100
+    - 89.233.43.71
+blocking:
+  blackLists:
+    ads:
+      - https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts

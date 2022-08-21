@@ -1,0 +1,24 @@
+#!/sbin/openrc-run
+
+depend() {
+	need net
+}
+
+start() {
+	ebegin "Starting ${SVCNAME}"
+	start-stop-daemon --start \
+	--exec /usr/bin/${SVCNAME} \
+	--background \
+	--make-pidfile \
+	--pidfile /var/run/${SVCNAME}.pid \
+	--stdout /var/log/blocky.log \
+	--stderr /var/log/blocky.log \
+	-- -c /etc/blocky/blocky.yml 
+	eend $?
+}
+
+stop() {
+	ebegin "Stopping ${SVCNAME}"
+	start-stop-daemon --stop --exec /usr/bin/${SVCNAME} --pidfile /var/run/${SVCNAME}.pid
+	eend $?
+}
