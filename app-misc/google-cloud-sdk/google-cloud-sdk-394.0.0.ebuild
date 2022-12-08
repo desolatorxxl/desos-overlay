@@ -36,7 +36,7 @@ src_install() {
 	mkdir -p ${D}/opt
 	cp -r ${S} ${D}/opt || die
 	elog "Creating gcloud symlink"
-	dosym ${D}/opt/google-cloud-sdk/bin/gcloud /usr/bin/gcloud
+	dosym /opt/google-cloud-sdk/bin/gcloud /usr/bin/gcloud
 	elog "Installing man pages"
 	doman help/man/man1/*
 	insinto /usr/share/zsh/site-functions
