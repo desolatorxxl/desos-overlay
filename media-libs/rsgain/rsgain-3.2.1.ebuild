@@ -13,6 +13,7 @@ KEYWORDS="amd64"
 BDEPEND="
 	media-libs/libebur128
 	dev-libs/libfmt
-	media-libs/taglib"
+	media-libs/taglib
+	dev-libs/inih"
 RDEPEND="$BDEPEND"
 DEPEND="$RDEPEND"
