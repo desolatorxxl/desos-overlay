@@ -12,7 +12,7 @@ SLOT="0"
 KEYWORDS="amd64"
 
 src_compile() {
-	go build ./cmd/trivy
+	go build -ldflags "-X github.com/aquasecurity/trivy/pkg/version.ver=${PV}" ./cmd/trivy
 }
 
 src_install() {
