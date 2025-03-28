@@ -26,7 +26,6 @@ src_install() {
 		1 > /dev/null || die
 
 	elog "Removing unnecessary files"
-	rm -Rf .install
 	rm -Rf platform/bundledpythonunix
 	rm -Rf platform/gsutil/third_party/crcmod_osx
 	rm -Rf platform/gsutil_py2/third_party/crcmod_osx
