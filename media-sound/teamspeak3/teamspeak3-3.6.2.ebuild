@@ -50,6 +50,12 @@ src_prepare() {
 
 	# Fix for Wayland - force xcb platform
 	sed -i "s|ts3client_linux_amd64|ts3client_linux_amd64 -platform xcb|" ts3client_runscript.sh || die
+
+	# Remove wayland plugins (not used since we force xcb platform)
+	rm -rf platforms/libqwayland*.so || die
+
+	# Remove webp plugin (requires libwebp.so.6 which may not be available)
+	rm -f imageformats/libqwebp.so || die
 }
 
 src_install() {
